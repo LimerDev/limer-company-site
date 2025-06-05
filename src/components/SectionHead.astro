@@ -1,0 +1,17 @@
+---
+const { title, gradients = [] } = Astro.props;
+
+const classRail =
+    "font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r";
+---
+
+<div
+    class="flex heading-lg flex-col gap-4 justify-center items-center text-center"
+>
+    <h2 class:list={[classRail, ...gradients]}>
+        {title}
+    </h2>
+    <div class="max-w-content-sm font-light body-lg">
+        <slot />
+    </div>
+</div>

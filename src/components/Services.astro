@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import Divider from "./Divider.astro";
+import SectionHead from "./SectionHead.astro";
+import services from "../assets/images/services_placeholder.png";
+---
+
+<div class="bg-[#ECF6F0]">
+    <section class="section">
+        <SectionHead
+            title="Våra tjänster"
+            gradients={["from-[#5BDB7D]", "to-[#5DA16F]"]}
+        >
+            <p>
+                There are many variations of passages of Lorem Ipsum available
+                but the majority have suffered alteration in some form.
+            </p>
+        </SectionHead>
+        <div class="flex justify-center items-center gap-20">
+            <Image src={services} alt="Services illustration" loading="lazy" />
+            <ul class="max-w-[580px] body">
+                <li>
+                    <h3 class="font-bold text-xl mb-2">
+                        Digital transformation
+                    </h3>
+                    <p>
+                        There are many variations of passages of Lorem Ipsum
+                        available but the majority have suffered alteration in
+                        some form.
+                    </p>
+                    <Divider />
+                </li>
+                <li>
+                    <h3 class="font-bold text-xl mb-2">Rådgivning</h3>
+                    <p>
+                        There are many variations of passages of Lorem Ipsum
+                        available but the majority have suffered alteration in
+                        some form.
+                    </p>
+                    <Divider />
+                </li>
+                <li>
+                    <h3 class="font-bold text-xl mb-2">Systemutveckling</h3>
+                    <p class="font-light">
+                        There are many variations of passages of Lorem Ipsum
+                        available but the majority have suffered alteration in
+                        some form.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

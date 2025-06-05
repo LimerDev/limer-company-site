@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import Icon from "../components/icons/LinkedIn.astro";
+import Logo from "../assets/svg/logo-light.svg";
+const year = new Date().getFullYear();
+---
+
+<footer class="flex flex-col gap-4 text-white bg-gray-900 py-16 px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto w-full">
+        <div class="flex flex-col max-w-[520px] gap-6">
+            <div class="flex flex-col gap-4">
+                <a href="/">
+                    <Image src={Logo} alt="Limer logo" height={64} />
+                </a>
+                <p class="text-gray-300">
+                    Vi tror på att arbeta nära och öppet med våra kunder; vår
+                    filosofi är att ett ärligt och transparent samarbete skapar
+                    de bästa förutsättningarna för framgång.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col gap2 sm:items-end">
+            <p class="font-bold text-right mb-2">Följ oss på</p>
+            <div class="flex gap-4 sm:ml-auto mb-4">
+                <a
+                    href="https://www.linkedin.com/company/106332249"
+                    class="hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-all duration-75"
+                >
+                    <Icon icon="linkedin" size={32} />
+                </a>
+                <a
+                    href="https://x.com/Limer_AB"
+                    class="hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-all duration-75"
+                >
+                    <Icon icon="x" size={32} />
+                </a>
+                <a
+                    href="https://www.facebook.com/people/Limer/61572600669918/"
+                    class="hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-all duration-75"
+                >
+                    <Icon icon="facebook" size={32} />
+                </a>
+            </div>
+        </div>
+        <div
+            class="flex gap-1 justify-between w-full col-start-1 col-end-3 border-t border-t-[rgba(255,255,255,0.15)] pt-6 mt-16"
+        >
+            <div class="flex gap-2 justify-between items-center">
+                <p class="text-xs text-gray-400">kontakt@limer.dev</p>
+                <p class="text-xs text-gray-400">Limer AB, 559503-6210</p>
+                <p class="text-xs text-gray-400">
+                    Järnvägsgatan 8, 243 30 Höör
+                </p>
+            </div>
+            <p class="text-xs text-gray-400">© {year} Limer AB</p>
+        </div>
+    </div>
+</footer>

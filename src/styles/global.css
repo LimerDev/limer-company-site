@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+    --default-font-family: "Geist";
+    --container-content-sm: 780px;
+    --container-content: 1200px;
+    --container-content-lg: 1800px;
+    --text-clamped-lg: clamp(2.25rem, calc(1.4971rem + 2.35vw), 3.75rem);
+    --text-clamped-md: clamp(1rem, calc(0.8431rem + 0.49vw), 1.3125rem);
+    --text-clamped-sm: clamp(1rem, calc(0.8431rem + 0.49vw), 1.3125rem);
+}
+
+.body-lg p,
+.body-lg span,
+.body-lg li,
+.body-lg ul {
+    font-size: var(--text-clamped-md);
+    line-height: calc(var(--text-clamped-md) * 1.5);
+    color: #030712;
+    font-weight: 300;
+}
+
+.body p,
+.body span,
+.body li,
+.body ul {
+    font-size: 1.125rem;
+    color: #030712;
+    font-weight: 300;
+}
+
+.heading-lg h1,
+.heading-lg h2,
+.heading-lg h3,
+.heading-lg h4,
+.heading-lg h5,
+.heading-lg h6 {
+    font-size: var(--text-clamped-lg);
+    line-height: var(--text-clamped-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.section {
+    min-height: 100dvh;
+    padding-block: 128px;
+    padding-inline: 24px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+}

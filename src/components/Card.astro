@@ -1,0 +1,112 @@
+---
+const { fullName, title, phone, mail, image } = Astro.props;
+import Mail from "./icons/Mail.astro";
+import Phone from "./icons/Phone.astro";
+import { Image } from "astro:assets";
+
+const gradients = [
+    "from-purple-400/70 to-pink-400/70",
+    "from-blue-400/70 to-cyan-400/70",
+    "from-green-400/70 to-teal-400/70",
+    "from-orange-400/70 to-red-400/70",
+    "from-indigo-400/70 to-purple-400/70",
+    "from-emerald-400/70 to-blue-400/70",
+];
+
+const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+---
+
+<article
+    class="bg-blue-50 relative rounded-[20px] overflow-hidden h-full min-h-[375px] w-full max-w-[260px] flex group group-hover:opacity-100 transition-transform duration-300 hover:scale-105"
+    data-card
+>
+    <Image
+        class="absolute object-cover w-full h-full"
+        src={image}
+        alt={`Profile picture of ${fullName}`}
+    />
+
+    <div
+        class={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 backdrop-blur-[3px] bg-gradient-to-br ${randomGradient} flex flex-col justify-between text-white p-6`}
+        data-overlay
+    >
+        <div>
+            <h3 class="font-bold text-4xl mb-2 max-w-[200px]">
+                {fullName}
+            </h3>
+            <div class="text-lg mb-4">
+                {title}
+            </div>
+            {
+                phone && (
+                    <div class="flex items-center gap-2 mb-2">
+                        <Phone />
+                        <span>{phone}</span>
+                    </div>
+                )
+            }
+            {
+                mail && (
+                    <div class="flex items-center gap-2">
+                        <Mail />
+                        <span>{mail}</span>
+                    </div>
+                )
+            }
+        </div>
+    </div>
+    <button
+        class="cursor-pointer absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:bg-white shadow-lg z-10"
+        data-toggle-btn
+    >
+        <svg
+            class="w-6 h-6 text-gray-700 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+    </button>
+</article>
+
+<script>
+    const cards = document.querySelectorAll("[data-card]");
+
+    cards.forEach((card) => {
+        const toggleBtn = card.querySelector("[data-toggle-btn]");
+        const overlay = card.querySelector("[data-overlay]");
+        const btnIcon = toggleBtn?.querySelector("svg");
+        let isActive = false;
+
+        toggleBtn?.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            isActive = !isActive;
+
+            if (isActive) {
+                overlay?.classList.add("opacity-100");
+                card?.classList.add("scale-105");
+                btnIcon?.classList.add("rotate-45");
+            } else {
+                overlay?.classList.remove("opacity-100");
+                card?.classList.remove("scale-105");
+                btnIcon?.classList.remove("rotate-45");
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!card.contains(e.target) && isActive) {
+                isActive = false;
+                overlay?.classList.remove("opacity-100");
+                card?.classList.remove("scale-105");
+                btnIcon?.classList.remove("rotate-45");
+            }
+        });
+    });
+</script>

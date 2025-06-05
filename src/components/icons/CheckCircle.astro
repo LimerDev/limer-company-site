@@ -1,0 +1,10 @@
+---
+import Wrapper from "./Wrapper.astro";
+const { size = 16, rotate = 0 } = Astro.props;
+---
+
+<Wrapper size={size} rotate={rotate}>
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+</Wrapper>

@@ -1,0 +1,8 @@
+---
+const { size = 16, rotate = 0 } = Astro.props;
+const commonStyle = `width:${size}px; height: ${size}px; rotate: ${rotate}deg`;
+---
+
+<div style={commonStyle}>
+    <slot />
+</div>

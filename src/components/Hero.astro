@@ -1,0 +1,29 @@
+---
+import logotype from "../assets/svg/hero-logo.svg";
+import wave from "../assets/svg/wave.svg";
+import { Image } from "astro:assets";
+---
+
+<section class="h-dvh bg-sky-50">
+    <div
+        class="flex w-[calc(100dvw/2)] absolute z-10 gap-6 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+    >
+        <Image
+            src={logotype}
+            class="flex-1 w-full"
+            alt="Limer company logo"
+            format="svg"
+        />
+        <div class="flex flex-1 flex-col justify-center font-bold text-6xl">
+            <span>Teknik.</span>
+            <span>Resultat.</span>
+            <span>Lorem.</span>
+        </div>
+    </div>
+    <Image
+        src={wave}
+        alt="Decorative wave background"
+        format="svg"
+        class="w-full max-w-[1200px] absolute z-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+    />
+</section>
