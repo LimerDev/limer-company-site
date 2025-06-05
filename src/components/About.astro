@@ -13,26 +13,32 @@ import blob from "../assets/svg/blob.svg";
             förutsättningarna för framgång.
         </p>
     </SectionHead>
-    <div class="grid grid-cols-[1fr_1fr] grid-rows-[50px_1fr_50px] gap-20">
-        <div class="relative col-2 row-start-1 row-end-4">
+    <div
+        class="relative grid grid-cols-[1fr] sm:grid-cols-[1fr_100px] md:grid-cols-[1fr_1fr] md:grid-rows-[40px_1fr_40px] gap-4 md:gap-10 md:gap-20"
+    >
+        <div
+            class="absolute w-[400px] h-[400px] md:h-full md:w-auto md:relative col-2 row-start-1 row-end-4"
+        >
             <Image
-                class="absolute top-0 h-full w-auto"
+                class="rotate-20 left-[-80px] z-[-1] sm:rotate-0 sm:left-0 absolute md:top-1/2 md:-translate-y-1/2 h-auto"
                 src={blob}
                 alt="Decorative blob shape"
                 loading="lazy"
             />
             <Image
-                class="absolute top-0 h-full w-auto"
+                class="invisible sm:visible absolute top-0 left-0 h-auto md:top-1/2 md:-translate-y-1/2"
                 src={imageblob}
                 alt="A person sitting on a bench with a laptop"
                 loading="lazy"
             />
         </div>
 
-        <div class="grid-cols-1 flex flex-1 flex-col gap-20 col-1 row-2 body">
+        <div
+            class="grid-cols-1 flex flex-1 flex-col gap-8 md:gap-10 col-1 row-2 body"
+        >
             <div class="heading-md">
                 <h2
-                    class="max-w-[400px] text-4xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#494774] to-[#87C9D3]"
+                    class="mb-2 md:mb-4 max-w-[400px] text-4xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#494774] to-[#87C9D3]"
                 >
                     Ett samarbete som gör skillnad.
                 </h2>
@@ -48,7 +54,7 @@ import blob from "../assets/svg/blob.svg";
             </div>
             <div class="heading-md">
                 <h2
-                    class="max-w-[420px] text-4xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#C05204] to-[#FFF0B3]"
+                    class="mb-2 md:mb-4 max-w-[420px] text-4xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#C05204] to-[#FFF0B3]"
                 >
                     Innovation och framtidsfokus.
                 </h2>

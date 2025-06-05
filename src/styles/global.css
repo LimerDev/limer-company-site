@@ -26,6 +26,7 @@
 .body li,
 .body ul {
     font-size: var(--text-clamped-sm);
+    line-height: calc(var(--text-clamped-sm) * 1.5);
     color: #030712;
     font-weight: 400;
 }
@@ -36,7 +37,7 @@
 .heading-md h5,
 .heading-md h6 {
     font-size: var(--text-clamped-lg);
-    line-height: var(--text-clamped-lg);
+    line-height: calc(var(--text-clamped-lg) * 1.125);
     font-weight: var(--font-weight-bold);
 }
 
@@ -64,19 +65,22 @@
 
 .section {
     min-height: 100dvh;
-    padding-block: 128px;
-    padding-inline: 24px;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
     max-width: 1320px;
     margin: 0 auto;
+
+    padding-inline: 16px;
+    padding-block: 64px;
 }
 
 @media (min-width: 768px) {
     .section {
         gap: 84px;
+        padding-block: 128px;
+        padding-inline: 24px;
     }
 }
 
