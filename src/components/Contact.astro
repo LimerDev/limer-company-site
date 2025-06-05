@@ -1,5 +1,6 @@
 ---
 import Form from "./Form.astro";
+import SectionHead from "./SectionHead.astro";
 ---
 
 <div class="bg-gray-50">
@@ -7,126 +8,86 @@ import Form from "./Form.astro";
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div class="bg-white rounded-xl shadow-lg p-8 col-2 row-1">
                 <Form />
-                <div
-                    class="hidden flex-col items-center justify-center text-center bg-green-50 border border-green-200 rounded-lg p-6 mt-6"
-                    id="success-message"
-                >
-                    <div class="text-green-600">
-                        <svg
-                            class="w-12 h-12 mx-auto mb-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <h3 class="text-lg font-semibold mb-2">
-                            Ditt meddelande har skickats
-                        </h3>
-                        <p class="text-green-700">
-                            Vi återkommer så snart vi kan.
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="hidden flex-col items-center justify-center text-center bg-red-50 border border-red-200 rounded-lg p-6 mt-6"
-                    id="fail-message"
-                >
-                    <div class="text-red-600">
-                        <svg
-                            class="w-12 h-12 mx-auto mb-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                        </svg>
-                        <h3 class="text-lg font-semibold mb-2">
-                            Ditt meddelande kunde inte skickas
-                        </h3>
-                        <p class="text-red-700">
-                            Kontakta oss via <a
-                                href="mailto:kontakt@limer.dev"
-                                class="underline">kontakt@limer.dev</a
-                            >
-                        </p>
-                    </div>
-                </div>
             </div>
-            <div
-                class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl text-white p-8 row-1 col-1"
-            >
-                <h3 class="text-2xl font-bold mb-6">Få kontakt med oss</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            ></path>
-                        </svg>
-                        <span>kontakt@limer.dev</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                            ></path>
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <span>Järnvägsgatan 8, 243 30 Höör</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                            ></path>
-                        </svg>
-                        <span>Limer AB, 559503-6210</span>
-                    </div>
+            <div class="pt-6">
+                <div class="mb-8">
+                    <SectionHead
+                        title="Kontakt"
+                        gradients={["from-orange-400", "to-orange-600"]}
+                        position="left"
+                    >
+                        Har du en idé som du vill utforska tillsammans med oss?
+                        Vad kul - då vill vi gärna höra mer. Kom förbi på en
+                        kaffe eller skicka ett meddelande så återkommer vi så
+                        fort vi kan.
+                    </SectionHead>
                 </div>
-                <div class="mt-8">
-                    <p class="text-orange-100 leading-relaxed">
-                        Vi svarar vanligtvis inom 24 timmar på vardagar. Berätta
-                        gärna lite om ditt projekt så kan vi ge dig bättre
-                        rådgivning.
-                    </p>
+                <div
+                    class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl text-white p-8 row-1 col-1"
+                >
+                    <!-- <h3 class="text-2xl font-bold mb-6">Få kontakt med oss</h3> -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                            <span>kontakt@limer.dev</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Järnvägsgatan 8, 243 30 Höör</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                ></path>
+                            </svg>
+                            <span>Limer AB, 559503-6210</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-orange-100 leading-relaxed">
+                            Vi svarar vanligtvis inom 24 timmar på vardagar.
+                            Berätta gärna lite om ditt projekt så kan vi ge dig
+                            bättre rådgivning.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
