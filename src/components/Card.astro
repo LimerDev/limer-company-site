@@ -17,7 +17,7 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
 ---
 
 <article
-    class="bg-blue-50 relative rounded-[20px] overflow-hidden h-full min-h-[375px] w-full max-w-[260px] flex group group-hover:opacity-100 transition-transform duration-300 hover:scale-105"
+    class="h-full flex-1 w-full relative rounded-lg overflow-hidden flex group group-hover:opacity-100 transition-transform duration-300 sm:hover:scale-105"
     data-card
 >
     <Image
@@ -27,33 +27,34 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
     />
 
     <div
-        class={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 backdrop-blur-[3px] bg-gradient-to-br ${randomGradient} flex flex-col justify-between text-white p-6`}
+        class={`min-h-[520px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inset-0 backdrop-blur-[3px] bg-gradient-to-br ${randomGradient} text-white p-6`}
         data-overlay
     >
-        <div>
-            <h3 class="font-bold text-4xl mb-2 max-w-[200px]">
-                {fullName}
-            </h3>
-            <div class="text-lg mb-4">
-                {title}
-            </div>
-            {
-                phone && (
-                    <div class="flex items-center gap-2 mb-2">
-                        <Phone />
-                        <span>{phone}</span>
-                    </div>
-                )
-            }
-            {
-                mail && (
-                    <div class="flex items-center gap-2">
-                        <Mail />
-                        <span>{mail}</span>
-                    </div>
-                )
-            }
+        <h3 class="font-bold text-3xl mb-2 max-w-[200px]">
+            {fullName}
+        </h3>
+        <div class="text-lg mb-4">
+            {title}
         </div>
+        <div class="mb-8">
+            <slot />
+        </div>
+        {
+            phone && (
+                <div class="flex items-center gap-2 mb-2">
+                    <Phone />
+                    <span>{phone}</span>
+                </div>
+            )
+        }
+        {
+            mail && (
+                <div class="flex items-center gap-2">
+                    <Mail />
+                    <span>{mail}</span>
+                </div>
+            )
+        }
     </div>
     <button
         class="cursor-pointer absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:bg-white shadow-lg z-10"
@@ -90,11 +91,11 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
 
             if (isActive) {
                 overlay?.classList.add("opacity-100");
-                card?.classList.add("scale-105");
+                card?.classList.add("sm:scale-105");
                 btnIcon?.classList.add("rotate-45");
             } else {
                 overlay?.classList.remove("opacity-100");
-                card?.classList.remove("scale-105");
+                card?.classList.remove("sm:scale-105");
                 btnIcon?.classList.remove("rotate-45");
             }
         });
@@ -104,7 +105,7 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
             if (!card.contains(e.target) && isActive) {
                 isActive = false;
                 overlay?.classList.remove("opacity-100");
-                card?.classList.remove("scale-105");
+                card?.classList.remove("sm:scale-105");
                 btnIcon?.classList.remove("rotate-45");
             }
         });

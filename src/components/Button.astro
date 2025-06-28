@@ -1,0 +1,15 @@
+---
+const { href, class: className } = Astro.props;
+---
+
+<a
+    class:list={[
+        "bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-8 py-4 flex transition-all duration-300 ease-in-out rounded-[20px]",
+        className,
+    ]}
+    href={href}
+>
+    <div class="w-full flex justify-center items-center">
+        <slot />
+    </div>
+</a>
