@@ -30,7 +30,9 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
         class={`min-h-[520px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inset-0 backdrop-blur-[3px] bg-gradient-to-br ${randomGradient} text-white p-6`}
         data-overlay
     >
-        <h3 class="font-bold text-3xl mb-2 max-w-[200px]">
+        <h3
+            class="font-bold text-3xl lg:text-4xl mb-2 mt-2 lg:mt-6 max-w-[280px]"
+        >
             {fullName}
         </h3>
         <div class="text-lg mb-4">
@@ -57,7 +59,7 @@ const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
         }
     </div>
     <button
-        class="cursor-pointer absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:bg-white shadow-lg z-10"
+        class="visible lg:hidden cursor-pointer absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:bg-white shadow-lg z-10"
         data-toggle-btn
     >
         <svg
