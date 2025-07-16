@@ -1,42 +1,55 @@
 <form
-    name="contact"
+    name="contact-form"
     method="POST"
     data-netlify="true"
+    netlify-honeypot="bot-field"
     class="flex flex-col gap-6"
     id="contact-form"
 >
+    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value="contact-form" />
     <input
         type="text"
         id="contact-form-name"
         name="name"
         placeholder="Namn"
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+        required
+        minlength="2"
+        maxlength="50"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all valid:border-green-500 invalid:border-red-500"
     />
     <input
         type="email"
         id="contact-form-email"
         name="email"
         placeholder="Email"
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+        required
+        maxlength="100"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all valid:border-green-500 invalid:border-red-500"
     />
     <input
         type="tel"
         id="contact-form-phone"
         name="phone"
         placeholder="Telefon"
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+        required
+        pattern="^(\+46|0)7[0-9]{8}$"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all valid:border-green-500 invalid:border-red-500"
     />
     <textarea
         id="contact-form-message"
         name="message"
         placeholder="Meddelande"
         rows="5"
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all resize-vertical"
+        required
+        minlength="10"
+        maxlength="1000"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all valid:border-green-500 invalid:border-red-500"
     ></textarea>
     <button
-        type="button"
+        type="submit"
         id="contact-form-submit-button"
-        class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-600 hover:to-orange-700 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        class="cursor-pointer w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-600 hover:to-orange-700 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
     >
         Skicka meddelande
     </button>
