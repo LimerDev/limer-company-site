@@ -5,7 +5,7 @@ import Logo from "../assets/svg/logo-light.svg";
 const year = new Date().getFullYear();
 ---
 
-<footer class="flex flex-col gap-4 text-white bg-gray-900 py-16 px-6">
+<footer class="flex flex-col gap-4 text-white bg-gray-900 py-8 md:py-16 px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto w-full">
         <div class="flex flex-col max-w-[520px] gap-6">
             <div class="flex flex-col gap-4">
@@ -19,8 +19,10 @@ const year = new Date().getFullYear();
                 </p>
             </div>
         </div>
-        <div class="flex flex-col gap2 sm:items-end">
-            <p class="font-bold text-right mb-2">Följ oss på</p>
+        <div class="flex flex-col col-1 md:col-2 gap2 sm:items-end">
+            <p class="font-bold text-left mt-4 md:mt-0 md:text-right mb-2">
+                Följ oss på
+            </p>
             <div class="flex gap-4 sm:ml-auto mb-4">
                 <a
                     href="https://www.linkedin.com/company/106332249"
@@ -31,18 +33,18 @@ const year = new Date().getFullYear();
             </div>
         </div>
         <div
-            class="flex gap-1 justify-between w-full col-start-1 col-end-3 border-t border-t-[rgba(255,255,255,0.15)] pt-6 mt-16"
+            class="flex flex-col md:flex-row gap-6 justify-center lg:justify-between w-full col-start-1 col-end-3 border-t border-t-[rgba(255,255,255,0.15)] mt-8 pt-8 md:mt-16"
         >
             <div
-                class="flex gap-2 justify-between items-center text-xs text-gray-400"
+                class="flex-col md:flex-row flex gap-2 justify-between items-center text-xs text-gray-400"
             >
                 <p>kontakt@limer.dev</p>
-                <span>|</span>
+                <span class="hidden md:inline">|</span>
                 <p>Limer AB, 559503-6210</p>
-                <span>|</span>
+                <span class="hidden md:inline">|</span>
                 <p>Järnvägsgatan 8, 243 30 Höör</p>
             </div>
-            <p class="text-xs text-gray-400">© {year} Limer AB</p>
+            <p class="text-xs text-gray-400 text-center">© {year} Limer AB</p>
         </div>
     </div>
 </footer>
