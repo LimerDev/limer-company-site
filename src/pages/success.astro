@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <main
+        class="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center px-4"
+    >
+        <div
+            class="max-w-lg w-full bg-white rounded-2xl shadow-xl p-8 text-center"
+        >
+            <div
+                class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+                <svg
+                    class="w-8 h-8 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">
+                Tack för ditt meddelande!
+            </h1>
+
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Vi har mottagit ditt meddelande och kommer att kontakta dig inom
+                kort. Vi uppskattar ditt intresse och ser fram emot att höra
+                från dig.
+            </p>
+
+            <div class="space-y-4">
+                <a
+                    href="/"
+                    class="inline-block w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-600 hover:to-orange-700 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all"
+                >
+                    Tillbaka till startsidan
+                </a>
+
+                <p class="text-sm text-gray-500">
+                    Har du frågor? Kontakta oss på <a
+                        href="mailto:info@limer.se"
+                        class="text-orange-600 hover:text-orange-700"
+                        >info@limer.se</a
+                    >
+                </p>
+            </div>
+        </div>
+    </main>
+</Layout>
