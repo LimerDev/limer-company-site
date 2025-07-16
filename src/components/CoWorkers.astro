@@ -9,18 +9,20 @@ import profile4 from "../assets/images/profile_placeholder_4.jpg";
 
 <div class="bg-purple-50">
     <section class="section">
-        <SectionHead
-            title="Våra medarbetare."
-            gradients={["from-[#B859A8]", "to-[#51449E]"]}
-            position="left"
-        >
-            <p>
-                Vi tror på att arbeta nära och öppet med våra kunder, vår
-                filosofi är att ett ärligt och transparent samarbete skapar de
-                bästa förutsättningarna för framgång.
-            </p>
-        </SectionHead>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div class="fade-in-content">
+            <SectionHead
+                title="Våra medarbetare."
+                gradients={["from-[#B859A8]", "to-[#51449E]"]}
+                position="left"
+            >
+                <p>
+                    Vi tror på att arbeta nära och öppet med våra kunder, vår
+                    filosofi är att ett ärligt och transparent samarbete skapar
+                    de bästa förutsättningarna för framgång.
+                </p>
+            </SectionHead>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 fade-in-content">
             <Card
                 image={profile1}
                 fullName="Victor Jimvid"

@@ -7,63 +7,72 @@ import services from "../assets/images/services_placeholder.png";
 
 <div class="bg-[#ECF6F0]">
     <section class="section">
-        <SectionHead
-            title="Våra tjänster"
-            gradients={["from-[#5BDB7D]", "to-[#5DA16F]"]}
-            position="left"
-        >
-            <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
-            </p>
-        </SectionHead>
-        <div
-            class="flex flex-col lg:flex-row-reverse justify-center items-center gap-8 lg:gap-20"
-        >
-            <div
-                class="h-0 invisible md:h-auto md:visible max-w-[540px] md:flex-shrink-0"
+        <div class="fade-in-content">
+            <SectionHead
+                title="Våra tjänster"
+                gradients={["from-[#5BDB7D]", "to-[#5DA16F]"]}
+                position="left"
             >
-                <Image
-                    src={services}
-                    alt="Services illustration"
-                    loading="lazy"
-                    class="w-full h-auto"
-                />
+                <p>
+                    There are many variations of passages of Lorem Ipsum
+                    available but the majority have suffered alteration in some
+                    form.
+                </p>
+            </SectionHead>
+        </div>
+        <div class="fade-in-content">
+            <div
+                class="flex flex-col lg:flex-row-reverse justify-center items-center gap-8 lg:gap-20"
+            >
+                <div
+                    class="h-0 invisible md:h-auto md:visible max-w-[540px] md:flex-shrink-0"
+                >
+                    <Image
+                        src={services}
+                        alt="Services illustration"
+                        loading="lazy"
+                        class="w-full h-auto"
+                    />
+                </div>
+                <ul class="w-full max-w-[580px] body">
+                    <li>
+                        <div class="heading-sm">
+                            <h3 class="font-bold mb-2">
+                                Digital transformation
+                            </h3>
+                        </div>
+                        <p>
+                            There are many variations of passages of Lorem Ipsum
+                            available but the majority have suffered alteration
+                            in some form.
+                        </p>
+                        <Divider />
+                    </li>
+                    <li>
+                        <div class="heading-sm">
+                            <h3 class="font-bold text-xl mb-2">Rådgivning</h3>
+                        </div>
+                        <p>
+                            There are many variations of passages of Lorem Ipsum
+                            available but the majority have suffered alteration
+                            in some form.
+                        </p>
+                        <Divider />
+                    </li>
+                    <li>
+                        <div class="heading-sm">
+                            <h3 class="font-bold text-xl mb-2">
+                                Systemutveckling
+                            </h3>
+                        </div>
+                        <p class="font-light">
+                            There are many variations of passages of Lorem Ipsum
+                            available but the majority have suffered alteration
+                            in some form.
+                        </p>
+                    </li>
+                </ul>
             </div>
-            <ul class="w-full max-w-[580px] body">
-                <li>
-                    <div class="heading-sm">
-                        <h3 class="font-bold mb-2">Digital transformation</h3>
-                    </div>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum
-                        available but the majority have suffered alteration in
-                        some form.
-                    </p>
-                    <Divider />
-                </li>
-                <li>
-                    <div class="heading-sm">
-                        <h3 class="font-bold text-xl mb-2">Rådgivning</h3>
-                    </div>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum
-                        available but the majority have suffered alteration in
-                        some form.
-                    </p>
-                    <Divider />
-                </li>
-                <li>
-                    <div class="heading-sm">
-                        <h3 class="font-bold text-xl mb-2">Systemutveckling</h3>
-                    </div>
-                    <p class="font-light">
-                        There are many variations of passages of Lorem Ipsum
-                        available but the majority have suffered alteration in
-                        some form.
-                    </p>
-                </li>
-            </ul>
         </div>
     </section>
 </div>
