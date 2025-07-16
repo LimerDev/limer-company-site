@@ -1,23 +1,63 @@
 ---
-import logotype from "../assets/svg/hero-logo.svg";
+import logotype from "../assets/svg/logo2.svg";
 import wave from "../assets/svg/wave.svg";
 import { Image } from "astro:assets";
 ---
 
-<section class="h-dvh bg-sky-50">
+<section class="h-dvh bg-sky-50 relative overflow-hidden">
     <div
-        class="flex w-[calc(100dvw/2)] absolute z-10 gap-6 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+        class="flex flex-col w-full max-w-5xl px-4 md:px-6 lg:px-8 absolute z-10 gap-2 sm:gap-6 md:gap-8 lg:gap-4 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
     >
-        <Image src={logotype} class="flex-1 w-full" alt="Limer company logo" />
-        <div class="flex flex-1 flex-col justify-center font-bold text-6xl">
+        <div class="flex justify-center">
+            <Image
+                src={logotype}
+                class="w-full max-w-xl md:max-w-2xl lg:max-w-3xl h-auto"
+                alt="Limer company logo"
+            />
+        </div>
+        <div
+            class="flex flex-row justify-center items-center font-bold text-[26px] sm:text-5xl md:text-5xl lg:text-6xl text-center gap-3 sm:gap-8"
+        >
             <span>Teknik.</span>
             <span>Resultat.</span>
             <span>Lorem.</span>
+        </div>
+        <div class="flex justify-center mt-2 md:mt-8">
+            <a
+                href="#contact"
+                class="bg-[#1a1a1a] text-white px-8 py-4 sm:px-8 sm:py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors text-lg sm:text-base"
+            >
+                Kontakta oss
+            </a>
         </div>
     </div>
     <Image
         src={wave}
         alt="Decorative wave background"
-        class="w-full max-w-[1200px] absolute z-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+        class="w-[120vw] md:w-[110vw] lg:w-[100vw] min-w-[1200px] max-w-[1400px] absolute z-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rotate-45 md:rotate-0"
     />
+
+    <!-- Scroll indicator -->
+    <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-gray-600 scale-[0.8]"
+    >
+        <div
+            class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center relative animate-bounce"
+            style="animation-duration: 2s;"
+        >
+            <svg
+                class="w-3 h-3 mt-4 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 5v14m7-7l-7 7-7-7"></path>
+                <circle cx="12" cy="19" r="1" fill="currentColor"></circle>
+            </svg>
+        </div>
+    </div>
 </section>
